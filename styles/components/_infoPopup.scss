@@ -1,0 +1,160 @@
+@use "../abstracts";
+
+::-webkit-scrollbar {
+    width: 13px;
+    background-color: alpha($color: #000000);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(88, 88, 88);
+}
+
+.info-container {
+    z-index: 2;
+    box-sizing: border-box;
+    //width: calc(100% - 60px);
+    width: 100%;
+    position: absolute;
+    display: grid;
+    //height: calc(100% - 140px);
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    background-color: transparent;
+    pointer-events:none;
+    
+    font-family: abstracts.$english;
+
+    &--infoOpen{
+        
+    }
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(85, 85, 85, 0.3);
+    position: absolute;
+
+}
+
+.info-frame {
+    width: 50%;
+    height: 80%;
+    pointer-events: all;
+    position: relative;
+
+    &__exit-button {
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        //left: 98%;
+        left: 97%;
+        bottom: 97%;
+        //padding: 10px 10px;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(88, 88, 88);
+        border-radius: 2rem;
+        color: aliceblue;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.infoPopup {
+    position: absolute;
+    overflow-y: scroll;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgb(230, 230, 230);
+    padding: 0 50px;
+
+    &--very-high {
+        border-top: 10px abstracts.$red solid;
+        .priority {
+            background-color: abstracts.$red;
+            display: inline;
+            padding: 2px 5px;
+            border-radius: 50px;
+            color: whitesmoke;
+        }
+    }
+    &--high {
+        border-top: 10px abstracts.$yellow solid;
+        .priority {
+            background-color: abstracts.$yellow;
+            display: inline;
+            padding: 2px 5px;
+            border-radius: 50px;
+            color: rgb(49, 49, 49);
+        }
+    }
+    &--normal {
+        border-top: 10px abstracts.$green solid;
+        .priority {
+            background-color: abstracts.$green;
+            display: inline;
+            padding: 2px 5px;
+            border-radius: 50px;
+            color: whitesmoke;
+        }
+    }
+    &--low {
+        border-top: 10px abstracts.$blue solid;
+        .priority {
+            background-color: abstracts.$blue;
+            display: inline;
+            padding: 2px 5px;
+            border-radius: 50px;
+            color: whitesmoke;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__subtitle {
+        margin: 30px 0 5px 0;
+        color: #555555;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    &__info {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    &__employee {
+        height: fit-content;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        //border: #707070 3px solid;
+        padding: 20px 30px;
+        margin-top: 10px;
+
+        &__name {
+            margin: 0 0 0 0;
+        }
+
+        &__info {
+            display: flex;
+            gap: 40px;
+            //justify-content:space-between;
+            &__subtitle {
+                color: #555555;
+                font-size: 0.79rem;
+                font-weight: 600;
+            }
+            &__info {
+                font-weight: 650;
+            }
+        }
+    }
+}
