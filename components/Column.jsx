@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
+
 const Column = ({ cards, state, openInfo, filterBy, sortBy }) => {
     const [displayCards, setDisplayCards] = useState([])
 
@@ -35,7 +36,7 @@ const Column = ({ cards, state, openInfo, filterBy, sortBy }) => {
     }
 
     const sortByName = (a, b) => {
-        return a.name > b.name ? 1 : -1;
+        return a.title > b.title ? 1 : -1;
     }
 
 
@@ -46,7 +47,6 @@ const Column = ({ cards, state, openInfo, filterBy, sortBy }) => {
         if (filterBy != 'none' && filterBy) {
             console.log('entered filter zone');
             filteredCards = filteredCards.filter(card => card.priority == filterBy)
-
         }
 
 
@@ -65,7 +65,7 @@ const Column = ({ cards, state, openInfo, filterBy, sortBy }) => {
         }
 
         setDisplayCards([...filteredCards])
-    }, [filterBy, sortBy])
+    }, [filterBy, sortBy, cards, state])
 
 
     return (

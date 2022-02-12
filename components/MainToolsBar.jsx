@@ -7,32 +7,32 @@ import { FiFilter } from "react-icons/fi";
 import { BsSortDown } from "react-icons/bs";
 import { AiFillCloseCircle, } from "react-icons/ai";
 
-const ToolsBar = ({filterBy, setFilterBy, sortBy, setSortBy}) => {
+const MainToolsBar = ({ filterBy, setFilterBy, sortBy, setSortBy, openAddCardForm}) => {
 
     const filter = (
         <Menu>
             <Menu.Item key={0}>
-                <a target="_blank" rel="noopener noreferrer"  onClick={() => setFilterBy('none')}>
+                <a target="_blank" rel="noopener noreferrer" onClick={() => setFilterBy('none')}>
                     none
                 </a>
             </Menu.Item>
             <Menu.Item key={1}>
-                <a target="_blank" rel="noopener noreferrer"  onClick={() => setFilterBy('very-high')}>
+                <a target="_blank" rel="noopener noreferrer" onClick={() => setFilterBy('very-high')}>
                     Very-High
                 </a>
             </Menu.Item>
             <Menu.Item key={2}>
-                <a target="_blank" rel="noopener noreferrer"  onClick={() => setFilterBy('high')}>
+                <a target="_blank" rel="noopener noreferrer" onClick={() => setFilterBy('high')}>
                     High
                 </a>
             </Menu.Item>
             <Menu.Item key={3}>
-                <a target="_blank" rel="noopener noreferrer"  onClick={() => setFilterBy('normal')}>
+                <a target="_blank" rel="noopener noreferrer" onClick={() => setFilterBy('normal')}>
                     Normal
                 </a>
             </Menu.Item>
             <Menu.Item key={4}>
-                <a target="_blank" rel="noopener noreferrer"  onClick={() => setFilterBy('low')}>
+                <a target="_blank" rel="noopener noreferrer" onClick={() => setFilterBy('low')}>
                     Low
                 </a>
             </Menu.Item>
@@ -66,7 +66,7 @@ const ToolsBar = ({filterBy, setFilterBy, sortBy, setSortBy}) => {
         </Menu>
     );
 
-    return <div>
+    return (
         <div className='tools-bar'>
             <div className='tools-bar__filters'>
                 <Dropdown overlay={filter}>
@@ -82,9 +82,9 @@ const ToolsBar = ({filterBy, setFilterBy, sortBy, setSortBy}) => {
                 </Dropdown>
                 {sortBy != 'none' ? <p className='btn-remove-criteria' onClick={() => setSortBy('none')}>{sortBy}  <AiFillCloseCircle size={15} /></p> : <p className='btn-remove-criteria--closed'> </p>}
             </div>
-            <Button type="primary">Primary Button</Button>
+            <button className='add-button' onClick={() => openAddCardForm()}>Add New +</button>
         </div>
-    </div>;
+    )
 };
 
-export default ToolsBar;
+export default MainToolsBar;

@@ -4,7 +4,7 @@ const Card = ({ card, openInfo}) => {
     return (
         <div onClick={() => openInfo(card.id)} className={`cards-container__column__body__card cards-container__column__body__card--` + card.priority}>
             <div className='cards-container__column__body__card__name'>
-                <h3>{card.name}</h3>
+                <h3>{card.title}</h3>
             </div>
             <div className='cards-container__column__body__card__date'>
                 <p><span className='subtitle'>priority:</span><br /><span className='priority'>{card.priority}</span></p>

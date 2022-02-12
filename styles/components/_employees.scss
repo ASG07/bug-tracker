@@ -1,0 +1,19 @@
+.employees-container{
+    overflow: auto;
+    background-color: aliceblue;
+    border: 3px rgb(109, 214, 255) solid;
+    border-top: 0px;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding: 10px;
+    justify-content: center;
+
+    .employees-table{
+        width: 95%;
+    }
+}
+

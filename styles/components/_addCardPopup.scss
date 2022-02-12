@@ -11,6 +11,7 @@
 }
 
 .mask{
+    z-index: 10;
     position: absolute;
     top: 0;
     left: 0;
@@ -22,8 +23,8 @@
     background-color: rgba(19, 14, 14, 0.3);
 }
 
-.info-frame {
-    width: 50%;
+.add-card-form-frame {
+    width: 30%;
     height: 80%;
     position: relative;
 
@@ -31,8 +32,10 @@
         cursor: pointer;
         z-index: 1;
         position: absolute;
-        left: calc(100% - 30px);
-        bottom: calc(100% - 30px);
+        //left: 98%;
+        left: 97%;
+        bottom: 97%;
+        //padding: 10px 10px;
         width: 40px;
         height: 40px;
         background-color: rgb(88, 88, 88);
@@ -44,7 +47,8 @@
     }
 }
 
-.infoPopup {
+.addPopup {
+    text-align:start;
     position: absolute;
     overflow-y: scroll;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -52,63 +56,65 @@
     width: 100%;
     background-color: rgb(230, 230, 230);
     padding: 0 50px;
-
-    &--very-high {
-        border-top: 10px abstracts.$red solid;
-        .priority {
-            background-color: abstracts.$red;
-            display: inline;
-            padding: 2px 5px;
-            border-radius: 50px;
-            color: whitesmoke;
-        }
-    }
-    &--high {
-        border-top: 10px abstracts.$yellow solid;
-        .priority {
-            background-color: abstracts.$yellow;
-            display: inline;
-            padding: 2px 5px;
-            border-radius: 50px;
-            color: rgb(49, 49, 49);
-        }
-    }
-    &--normal {
-        border-top: 10px abstracts.$green solid;
-        .priority {
-            background-color: abstracts.$green;
-            display: inline;
-            padding: 2px 5px;
-            border-radius: 50px;
-            color: whitesmoke;
-        }
-    }
-    &--low {
-        border-top: 10px abstracts.$blue solid;
-        .priority {
-            background-color: abstracts.$blue;
-            display: inline;
-            padding: 2px 5px;
-            border-radius: 50px;
-            color: whitesmoke;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-items: center;
+    
 
     &__title {
         margin-top: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+        font-weight: 600;
+        border-left: #555555 4px solid;
+        padding-left: 10px;
     }
 
     &__subtitle {
-        margin: 30px 0 5px 0;
+        margin: 10px 0 5px 0;
         color: #555555;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 700;
     }
 
-    &__info {
+    &__input {
         margin: 0;
         font-weight: 700;
+        border: 1px solid rgb(1, 132, 255);
+        width: 100%;
+        height: 2.5rem;
+        min-height: 2rem;
+        padding: 0px 5px;
+    }
+
+    .warning{
+        color: rgb(192, 0, 0);
+    }
+
+    textarea{
+        height: 5rem;
+        min-height: 4rem;
+        padding: 10px;
+    }
+
+    .btn-submit{
+        
+        margin: auto;
+        
+        border: none;
+        padding: 5px 20px;
+        cursor: pointer;
+        color: aliceblue;
+        font-size:medium;
+        font-weight: 500;
+        border-radius: 10px;
+        background-color: rgb(1, 132, 255);
+        width: 30%;
+
+        &:hover{
+            background-color: rgb(0, 108, 209);
+        }
+
     }
 
     &__employee {

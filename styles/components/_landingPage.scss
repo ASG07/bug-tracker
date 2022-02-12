@@ -1,0 +1,35 @@
+@use "../abstracts";
+
+.landingPage-container {
+    height: 100vh;
+    width: 100%;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .first {
+        border-inline-end: 3px rgb(82, 82, 82) solid;
+    }
+    &__block {
+        width: 40%;
+        min-height: 150px;
+        height: 30%;
+        //background-color: rgb(192, 221, 247);
+        //border: 1px black solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__button {
+            width: 50%;
+            height: 20%;
+            background-color: rgb(77, 143, 204);
+            color: aliceblue;
+            font-family: abstracts.$english;
+            font-weight: 700;
+            font-size: 1.2vmax;
+        }
+    }
+}
