@@ -1,35 +1,86 @@
 @use "../abstracts";
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+    width: 80%;
+}
+
 .landingPage-container {
+    position: absolute;
     height: 100vh;
     width: 100%;
-    background-color: salmon;
+    background: linear-gradient(
+        135deg,
+        rgba(85, 239, 203, 1) 0%,
+        rgba(30, 87, 153, 1) 0%,
+        rgba(85, 239, 203, 1) 0%,
+        rgba(91, 202, 255, 1) 100%
+    );
+
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    z-index: -2;
 
+    //first &__block
     .first {
-        border-inline-end: 3px rgb(82, 82, 82) solid;
+        border-inline-end: 3px rgb(255, 255, 255) solid;
     }
     &__block {
+        padding: 0 5%;
         width: 40%;
         min-height: 150px;
         height: 30%;
-        //background-color: rgb(192, 221, 247);
-        //border: 1px black solid;
         display: flex;
         justify-content: center;
         align-items: center;
 
         &__button {
-            width: 50%;
-            height: 20%;
-            background-color: rgb(77, 143, 204);
-            color: aliceblue;
+            
+            color: #f7f7f7;
             font-family: abstracts.$english;
             font-weight: 700;
-            font-size: 1.2vmax;
+            background-color: transparent;
+            flex: 1 1 auto;
+            //margin: 10px;
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #f7f7f7;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            &:after {
+                position: absolute;
+                transition: 0.3s;
+                content: "";
+                width: 0;
+                left: 50%;
+                bottom: 0;
+                height: 3px;
+                background: #f7f7f7;
+                height: 120%;
+                left: -10%;
+                transform: skewX(15deg);
+                z-index: -1;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: #5bcaff;
+
+                &:after {
+                    width: 100%;
+                    left: 0;
+                    left: -10%;
+                    width: 120%;
+                }
+            }
         }
     }
 }
